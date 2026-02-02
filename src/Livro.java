@@ -2,7 +2,7 @@
  *
  * @author andre
  */
-public abstract class Livro {
+public abstract class Livro implements Produto, Promocional{
     
     private String nome;
     private String descricao;
@@ -33,9 +33,6 @@ public abstract class Livro {
     public Livro() {
         this.isbn = "000--00-00000-00-0";
     }
-    
-    public abstract boolean aplicaDescontoDe(double porcentagem);
-
   
     public String getNome() {
         return nome;
@@ -68,15 +65,6 @@ public abstract class Livro {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
-    /*
-    public boolean aplicaDescontoDe(double porcentagem){
-        if(porcentagem > 0.3){
-            return false;
-        }
-        this.valor -= this.valor * porcentagem;
-        return true;
-    }
-*/
    
     boolean temAutor(){
         return this.autor != null;
@@ -85,7 +73,8 @@ public abstract class Livro {
         this.valor = valor;
     }
     
-    double getValor(){
+    @Override
+    public double getValor(){
         return this.valor;
     }
     
