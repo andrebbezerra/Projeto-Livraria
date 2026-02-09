@@ -47,7 +47,7 @@ public class Revista implements Produto, Promocional{
         if(porcentagem > 0.1){
             return false;
         }
-        double desconto = getValor() * porcentagem;
+       
         setValor(getValor() - porcentagem);
         return true;
     }

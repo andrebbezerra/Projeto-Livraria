@@ -1,4 +1,6 @@
-package br.com.batista.livraria.produtos;
+package br.com.batista.livraria.teste;
+
+import br.com.batista.livraria.produtos.GerenciadorDeCupons;
 
 /**
  *
@@ -9,11 +11,12 @@ public class ConsultaDeDescontos {
     public static void main(String[] args) {
         GerenciadorDeCupons gerenciador = new GerenciadorDeCupons();
         
-        if(gerenciador.validaCupom("CUP1234")){
-            System.out.println("Cupom de desconto valido.");
-            
-        } else{
-            System.out.println("Esse cupom não existe.");
+        Double desconto = gerenciador.validaCupom("CUP74");
+
+        if(desconto != null){
+            System.out.println("Desconto encontrado: " + desconto + "%");
+        } else {
+            System.out.println("Cupom inválido.");
         }
     }
     
