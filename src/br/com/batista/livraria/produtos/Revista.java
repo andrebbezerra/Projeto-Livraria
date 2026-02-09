@@ -1,3 +1,6 @@
+package br.com.batista.livraria.produtos;
+import br.com.batista.livraria.Editora;
+
 /**
  *
  * @author andre
@@ -48,4 +51,17 @@ public class Revista implements Produto, Promocional{
         setValor(getValor() - porcentagem);
         return true;
     }
+    
+    @Override
+     public int compareTo(Produto outro){
+         
+        if(this.getValor() < outro.getValor()){
+         return -1;
+        }
+        if(this.getValor() > outro.getValor()){
+         return 1;
+        }
+        return 0;
+        
+     }
 }

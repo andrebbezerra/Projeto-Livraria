@@ -1,3 +1,10 @@
+package br.com.batista.livraria.teste;
+
+
+import br.com.batista.livraria.Autor;
+import br.com.batista.livraria.produtos.Livro;
+import br.com.batista.livraria.produtos.LivroFisico;
+
 /**
  *
  * @author andre

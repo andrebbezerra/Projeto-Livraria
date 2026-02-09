@@ -1,3 +1,8 @@
+package br.com.batista.livraria.produtos;
+
+
+import br.com.batista.livraria.Autor;
+
 /**
  *
  * @author andre
@@ -12,11 +17,21 @@ public class MiniLivro extends Livro implements Promocional{
     public boolean aplicaDescontoDe(double porcentagem) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    
     @Override
-    public boolean aplicaDescontoDe10Porcento() {
-        return super.aplicaDescontoDe10Porcento(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
+     public int compareTo(Produto outro){
+         
+        if(this.getValor() < outro.getValor()){
+         return -1;
+        }
+        if(this.getValor() > outro.getValor()){
+         return 1;
+        }
+        return 0;
+        
+     }
+
+   
     
     
 }

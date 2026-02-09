@@ -1,3 +1,5 @@
+package br.com.batista.livraria.produtos;
+
 /**
  *
  * @author andre

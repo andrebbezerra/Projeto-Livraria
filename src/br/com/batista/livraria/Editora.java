@@ -1,8 +1,10 @@
+package br.com.batista.livraria;
+
 /**
  *
  * @author andre
  */
-class Editora {
+public class Editora {
     private String nomeFantasia;
     private String razaoSocial;
     private String cnpj;

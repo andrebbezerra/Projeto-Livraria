@@ -1,16 +1,22 @@
+package br.com.batista.livraria.produtos;
+
+
+import br.com.batista.livraria.Autor;
+import br.com.batista.livraria.exception.AutorNuloException;
+
 /**
  *
  * @author andre
  */
-public abstract class Livro implements Produto, Promocional{
+public abstract class Livro implements Produto{
     
     private String nome;
     private String descricao;
     private double valor;
     private String isbn;
-    Autor autor;
+    public Autor autor;
     
-    void mostrarDetalhes(){
+    public void mostrarDetalhes(){
         String mensagem = "Mostrando detalhes do livro: ";
         System.out.println(mensagem);
         System.out.println("Nome: "+ nome);
@@ -26,8 +32,11 @@ public abstract class Livro implements Produto, Promocional{
     }
 
     public Livro(Autor autor) {
-        this();
+        if(autor == null){
+            throw new AutorNuloException("O Autor não pode ser nulo");
+        }
         this.autor = autor;
+        this.isbn = "000--00-00000-00-0";
     }
 
     public Livro() {
@@ -69,7 +78,7 @@ public abstract class Livro implements Produto, Promocional{
     boolean temAutor(){
         return this.autor != null;
     }
-    void setValor(double valor){
+    public void setValor(double valor){
         this.valor = valor;
     }
     
@@ -77,5 +86,6 @@ public abstract class Livro implements Produto, Promocional{
     public double getValor(){
         return this.valor;
     }
+
     
 }

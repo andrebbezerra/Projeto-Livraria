@@ -1,3 +1,5 @@
+package br.com.batista.livraria;
+
 /**
  *
  * @author andre
@@ -7,7 +9,7 @@ public class Autor {
     String email;
     String cpf;
     
-    void mostrarDetalhes(){
+   public void mostrarDetalhes(){
         String mensagem = "Mostrando detalhes do autor: ";
         System.out.println(mensagem);
         System.out.println("Nome: "+ nome);
@@ -37,6 +39,13 @@ public class Autor {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+    
+    @Override
+    public boolean equals(Object obj){
+        if(!(obj instanceof Autor)) return false;      
+        Autor outro = (Autor) obj;
+        return this.nome.equals(outro.nome);
     }
     
 }

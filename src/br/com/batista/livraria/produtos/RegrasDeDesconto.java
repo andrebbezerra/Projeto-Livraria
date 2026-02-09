@@ -1,3 +1,8 @@
+package br.com.batista.livraria.produtos;
+
+
+import br.com.batista.livraria.Autor;
+
 /**
  *
  * @author andre
